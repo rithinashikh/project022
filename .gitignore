@@ -1,2 +1,5 @@
-# Ignore .ipynb checkpoint files
+# Ignore .ipynb checkpoint files in the ipynb folder
 ipynb/.ipynb_checkpoints/
+
+# Ignore requirements.txt in the django folder
+django/requirements.txt
