@@ -57,19 +57,10 @@ def predict_price(request):
     # Convert price to lac or crore format
     if predicted_price >= 100:
         formatted_price = f"{predicted_price / 100:.2f} Cr"
-        price_in_words = f"{num2words(predicted_price / 100, lang='en')} Cr"
     else:
         formatted_price = f"{predicted_price:.2f} Lac"
-        price_in_words = f"{num2words(predicted_price, lang='en')} Lac"
     
-    # # Convert price to words (in crore/lac)
-    # if predicted_price >= 100:
-    #     price_in_words = f"{num2words(predicted_price / 100, lang='en')} crore"
-    # else:
-    #     price_in_words = f"{num2words(predicted_price, lang='en')} lac"
 
-    return render(request, 'prediction.html', {
-        'predicted_price': formatted_price,
-        'price_in_words': price_in_words
-    })
+
+    return render(request, 'prediction.html', {'predicted_price': formatted_price})
 
